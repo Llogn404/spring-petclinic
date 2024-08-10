@@ -14,5 +14,19 @@ pipeline{
                 -Dsonar.java.binaries=. '''
             }
         }
+
+        stage("Unit Test") {
+            steps{
+                sh "./mvnw test"
+                //Execute the test
+            }
+
+            post{
+                always{
+                    junit '**/target/surefire-reports/TEST-**.xml'
+                    //Display reports
+                }
+            }
+        }
     }
 }
