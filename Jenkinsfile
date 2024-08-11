@@ -10,7 +10,7 @@ pipeline{
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "http://localhost:8081/"
         NEXUS_REPOSITORY = "Spring"
-        NEXUS_CREDENTIALS_ID = "NexusCre"
+        NEXUS_CREDENTIALS_ID = credentials("NexusCre")
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
     }
     
