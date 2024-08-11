@@ -10,7 +10,7 @@ pipeline{
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "http://localhost:8081/"
         NEXUS_REPOSITORY = "Spring"
-        NEXUS_CREDENTIALS_ID = credentials("NexusCre")
+        NEXUS_CREDENTIALS_ID = "NexusCre"
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
     }
     
@@ -63,13 +63,13 @@ pipeline{
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
 
                         nexusArtifactUploader(
-                            nexusVersion: "{$NEXUS_VERSION}",
-                            protocol: "{$NEXUS_PROTOCOL}",
-                            nexusUrl: "{$NEXUS_URL}",
+                            nexusVersion: "$NEXUS_VERSION",
+                            protocol: "$NEXUS_PROTOCOL",
+                            nexusUrl: "$NEXUS_URL",
                             groupId: pom.groupId,
-                            version: "{$ARTIFACT_VERSION}",
-                            repository: "{$NEXUS_REPOSITORY}",
-                            credentialsId: 'NexusCre',
+                            version: "$ARTIFACT_VERSION",
+                            repository: "$NEXUS_REPOSITORY",
+                            credentialsId: "$NEXUS_CREDENTIALS_ID",
                             artifacts: [
                                 // Artifact generated such as .jar, .ear and .war files.
                                 [artifactId: pom.artifactId,
