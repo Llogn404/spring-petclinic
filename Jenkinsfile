@@ -11,6 +11,7 @@ pipeline{
         NEXUS_URL = "http://localhost:8081/"
         NEXUS_REPOSITORY = "Spring"
         NEXUS_CREDENTIALS_ID = "NexusCre"
+        ARTIFACT_VERSION = "${BUILD_NUMBER}"
     }
     
     stages{
