@@ -8,7 +8,7 @@ pipeline{
     environment{
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "http://localhost:8081/"
+        NEXUS_URL = "localhost:8081"
         NEXUS_REPOSITORY = "Spring"
         NEXUS_CREDENTIALS_ID = "NexusCre"
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
