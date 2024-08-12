@@ -107,7 +107,7 @@ pipeline{
                 subject: "PetClinic pipeline (${env.BRANCH_NAME}) status: ${currentBuild.currentResult}",
                 body:'''<html>
                             <body>
-                                <p>Build Status: ${currentResult}</p>
+                                <p>Build Status: $currentResult</p>
                                 <p>Current Build Number: ${BUILD_NUMBER}</p>
                                 <p>Console Output: ${BUILD_URL}</p>
                             </body>
