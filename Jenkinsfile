@@ -109,7 +109,7 @@ pipeline{
                             <body>
                                 <p>Build Status: ${currentBuild.currentResult}</p>
                                 <p>Current Build Number: ${env.BUILD_NUMBER}</p>
-                                <p>Console Output: <a href="${env.BUILD_URL}">${BUILD_URL}</a></p>
+                                <p>Console Output: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
                             </body>
                         </html> ''',
                 to:'philong3acc@gmail.com',
