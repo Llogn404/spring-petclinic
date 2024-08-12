@@ -90,7 +90,7 @@ pipeline{
             steps{
                 sh ''' 
                 wget --user=$NEXUS_CREDENTIALS_ID_USR --password=$NEXUS_CREDENTIALS_ID_PSW "http://localhost:8081/repository/Spring/org/springframework/samples/spring-petclinic/36/spring-petclinic-36.jar"
-                nohup java -jar -Dserver.port=8888 spring* &  '''
+                BUILD_ID=dontKillMe nohup java -jar -Dserver.port=8888 spring* &  '''
             }
         }
     }
