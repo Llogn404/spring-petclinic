@@ -89,14 +89,8 @@ pipeline{
         // stage("Deploy") {
         //     steps{
         //         sh ''' 
-        //             wget --user=$NEXUS_CREDENTIALS_ID_USR --password=NEXUS_CREDENTIALS_ID_PSW http://localhost:8081/repository/Spring/org/springframework/samples/spring-petclinic/32/spring-petclinic-32.war
-        //             mv spring* 
-        //             /opt/tomcat/bin/shutdown.sh
-        //             rm -f /opt/tomcat/webapps/ROOT
-
-        //             chown tomcat:tomcat /opt/tomcat/webapps/ROOT.war 
-        //             /opt/tomcat/bin/startup.sh 
-        //              '''
+        //         wget --user=$NEXUS_CREDENTIALS_ID_USR --password=$NEXUS_CREDENTIALS_ID_PSW http://localhost:8081/repository/Spring/org/springframework/samples/spring-petclinic/32/spring-petclinic-32.jar
+        //         java -jar -Dserver.port=8888 spring*'''
         //     }
         // }
     }
