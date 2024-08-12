@@ -107,9 +107,9 @@ pipeline{
                 subject: "PetClinic pipeline ${env.BRANCH_NAME} status: ${currentBuild.currentResult}",
                 body:'''<html>
                             <body>
-                                <p>Build Status: ${currentBuild.currentResult}</p>
-                                <p>Current Build Number: ${env.BUILD_NUMBER}</p>
-                                <p>Console Output: ${env.BUILD_URL}</p>
+                                <p>Build Status: $currentBuild.currentResult</p>
+                                <p>Current Build Number: $env.BUILD_NUMBER</p>
+                                <p>Console Output: $env.BUILD_URL</p>
                             </body>
                         </html> ''',
                 to:'philong3acc@gmail.com',
