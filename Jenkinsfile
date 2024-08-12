@@ -99,24 +99,24 @@ pipeline{
         //         }
         //     }
         // }
+    }
 
-        post {
-            always{
-                emailtext (
-                    subject: "PetClinic pipeline status: ${BUILD_STATUS}",
-                    body:'''<html>
-                                <body>
-                                    <p>Build Status: ${BUILD_RESULT}</p>
-                                    <p>Current Build Number: ${BUILD_NUMBER}</p>
-                                    <p>Console Output: <a href="${BUILD_URL}">${BUILD_URL}</a></p>
-                                </body>
-                            </html> ''',
-                    to:'philong3acc@gmail.com',
-                    from: 'philong.devops@gmail.com',
-                    replyTo: 'philong.devops@gmail.com',
-                    mimeType: 'text/html'
-                )
-            }
+    post {
+        always{
+            emailtext (
+                subject: "PetClinic pipeline status: ${BUILD_STATUS}",
+                body:'''<html>
+                            <body>
+                                <p>Build Status: ${BUILD_RESULT}</p>
+                                <p>Current Build Number: ${BUILD_NUMBER}</p>
+                                <p>Console Output: <a href="${BUILD_URL}">${BUILD_URL}</a></p>
+                            </body>
+                        </html> ''',
+                to:'philong3acc@gmail.com',
+                from: 'philong.devops@gmail.com',
+                replyTo: 'philong.devops@gmail.com',
+                mimeType: 'text/html'
+            )
         }
     }
 }
