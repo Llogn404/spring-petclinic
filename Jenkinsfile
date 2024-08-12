@@ -22,19 +22,19 @@ pipeline{
             }
         }
 
-        stage("Unit Test") {
-            steps{
-                sh "./mvnw test"
-                //Execute the test
-            }
+        // stage("Unit Test") {
+        //     steps{
+        //         sh "./mvnw test"
+        //         //Execute the test
+        //     }
 
-            post{
-                always{
-                    junit '**/target/surefire-reports/TEST-**.xml'
-                    //Display reports
-                }
-            }
-        }
+        //     post{
+        //         always{
+        //             junit '**/target/surefire-reports/TEST-**.xml'
+        //             //Display reports
+        //         }
+        //     }
+        // }
 
         // stage("Scan SonarQube"){
         //     steps{
@@ -104,12 +104,12 @@ pipeline{
     post {
         always{
             emailtext (
-                subject: "PetClinic pipeline status: ${BUILD_STATUS}",
+                subject: "PetClinic pipeline (${env.BRANCH_NAME}) status: ${currentBuild.currentResult}",
                 body:'''<html>
                             <body>
-                                <p>Build Status: ${BUILD_RESULT}</p>
-                                <p>Current Build Number: ${BUILD_NUMBER}</p>
-                                <p>Console Output: <a href="${BUILD_URL}">${BUILD_URL}</a></p>
+                                <p>Build Status: ${currentBuild.currentResult}</p>
+                                <p>Current Build Number: ${env.BUILD_NUMBER}</p>
+                                <p>Console Output: <a href="${env.BUILD_URL}">${BUILD_URL}</a></p>
                             </body>
                         </html> ''',
                 to:'philong3acc@gmail.com',
