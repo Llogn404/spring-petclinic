@@ -89,7 +89,6 @@ pipeline{
         stage("Deploy") {
             steps{
                 sh ''' 
-                rm spring*
                 curl -L -o Spring.jar -u $NEXUS_CREDENTIALS_ID_USR:$NEXUS_CREDENTIALS_ID_PSW -X GET "http://localhost:8081/service/rest/v1/search/assets/download/?sort=version&repository=Spring" '''
 
                 script{
