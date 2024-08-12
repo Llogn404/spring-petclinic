@@ -103,7 +103,7 @@ pipeline{
 
     post {
         always{
-            emailtext (
+            emailext (
                 subject: "PetClinic pipeline (${env.BRANCH_NAME}) status: ${currentBuild.currentResult}",
                 body:'''<html>
                             <body>
