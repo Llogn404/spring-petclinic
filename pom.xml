@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <version>3.3.0-SNAPSHOT</version>
 
   <parent>
@@ -151,6 +151,12 @@
       <groupId>org.jacoco</groupId> 
       <artifactId>jacoco-maven-plugin</artifactId>
       <version>0.8.11</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-war-plugin</artifactId>
+      <version>3.4.0</version>
     </dependency>
 
   </dependencies>
