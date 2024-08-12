@@ -90,8 +90,13 @@ pipeline{
             steps{
                 sh ''' 
                 rm spring*
-                wget --user=$NEXUS_CREDENTIALS_ID_USR --password=$NEXUS_CREDENTIALS_ID_PSW "http://localhost:8081/repository/Spring/org/springframework/samples/spring-petclinic/36/spring-petclinic-36.jar"
-                deamonize -E JENKINS_NODE_COOKIE=dontKillMe nohup java -jar -Dserver.port=8888 spring* &  '''
+                wget --user=$NEXUS_CREDENTIALS_ID_USR --password=$NEXUS_CREDENTIALS_ID_PSW "http://localhost:8081/repository/Spring/org/springframework/samples/spring-petclinic/36/spring-petclinic-36.jar"  '''
+
+                script{
+                    withEnv(["JENKINS_NODE_COOKIE=dontKillMe"]) {
+                        sh "nohup java -jar -Dserver.port=8888 spring* &"
+                    }
+                }
             }
         }
     }
