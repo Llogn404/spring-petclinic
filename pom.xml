@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artzifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <version>3.3.0-SNAPSHOT</version>
 
   <parent>
@@ -151,12 +151,6 @@
       <groupId>org.jacoco</groupId> 
       <artifactId>jacoco-maven-plugin</artifactId>
       <version>0.8.11</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-tomcat</artifactId>
-      <scope>provided</scope>
     </dependency>
 
   </dependencies>
