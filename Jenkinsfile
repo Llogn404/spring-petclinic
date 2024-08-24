@@ -39,8 +39,8 @@ pipeline{
         stage("Scan SonarQube"){
             steps{
                 sh ''' mvn sonar:sonar -Dsonar.url=https://http://localhost:9000 -Dsonar.login=squ_12d7c8f50a9c9a188b980c224f1117edd80373da \
-                -Dsonar.projectName=Spring_Dev \
-                -Dsonar.projectKey=Spring_Dev \
+                -Dsonar.projectName=Spring_Feature \
+                -Dsonar.projectKey=Spring_Feature \
                 -Dsonar.java.binaries=. '''
             }
         }
